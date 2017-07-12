@@ -1,0 +1,14 @@
+server:
+  port: 8083
+  sessionTimeout: 30
+  contextPath: /mars
+  jetty:
+    acceptors: 2
+
+##  ˝æ›‘¥≈‰÷√
+spring:
+    datasource:
+        url: jdbc:mysql://139.196.199.232:3306/mars?useUnicode=true&characterEncoding=utf-8
+        username: root
+        password: arm_123456
+        driver-class: com.mysql.jdbc.Driver
