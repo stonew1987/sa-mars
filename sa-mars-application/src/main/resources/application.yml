@@ -6,9 +6,6 @@ server:
     acceptors: 2
 
 spring:
-    output:
-      ansi:
-        enabled: detect
     datasource:
         url: jdbc:mysql://139.196.199.232:3306/mars?useUnicode=true&characterEncoding=utf-8
         username: root
