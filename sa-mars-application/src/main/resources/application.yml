@@ -5,8 +5,10 @@ server:
   jetty:
     acceptors: 2
 
-## Êı¾İÔ´ÅäÖÃ
 spring:
+    output:
+      ansi:
+        enabled: detect
     datasource:
         url: jdbc:mysql://139.196.199.232:3306/mars?useUnicode=true&characterEncoding=utf-8
         username: root
