@@ -2,6 +2,7 @@ package com.mars.manage.mapper;
 
 import com.mars.manage.model.Company;
 
+
 public interface CompanyMapper {
     int deleteByPrimaryKey(Long id);
 
@@ -14,4 +15,5 @@ public interface CompanyMapper {
     int updateByPrimaryKeySelective(Company record);
 
     int updateByPrimaryKey(Company record);
+
 }
