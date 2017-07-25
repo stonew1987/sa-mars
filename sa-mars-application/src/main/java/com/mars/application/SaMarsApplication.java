@@ -13,7 +13,7 @@ import org.springframework.context.annotation.ImportResource;
 @EnableAspectJAutoProxy
 @EnableAutoConfiguration
 @Configuration
-@MapperScan("com.mars.manage.mapper")
+@MapperScan("com.mars.*.mapper")
 public class SaMarsApplication {
 
 	public static void main(String[] args) {

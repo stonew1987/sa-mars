@@ -1,9 +1,9 @@
 package com.mars.manage.controller;
 
 import com.github.pagehelper.PageInfo;
+import com.mars.manage.service.UserService;
 import com.mars.share.common.message.BaseResult;
 import com.mars.share.manage.dto.UserDTO;
-import com.mars.share.manage.service.UserService11;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,7 +21,7 @@ public class UserController {
 
 
     @Autowired
-    private UserService11 userService;
+    private UserService userService;
 
     @RequestMapping(value = "/users/{id}",method = RequestMethod.GET)
     public BaseResult<UserDTO> getUser(@PathVariable Long id){

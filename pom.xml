@@ -14,6 +14,7 @@
 		<module>sa-mars-web</module>
 		<module>sa-mars-wechat</module>
 		<module>sa-mars-pay</module>
+		<module>sa-mars-generator</module>
 	</modules>
 
 	<parent>

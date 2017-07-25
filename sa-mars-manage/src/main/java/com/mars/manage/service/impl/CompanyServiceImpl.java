@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 
 @Service
-public class CompanyServiceImpl extends BaseServiceImpl<Company> implements CompanyService {
+public class CompanyServiceImpl{// extends BaseServiceImpl<Company> implements CompanyService {
 
     @Autowired
     private CompanyMapper companyMapper;
