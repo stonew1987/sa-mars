@@ -13,5 +13,8 @@ spring:
         driver-class: com.mysql.jdbc.Driver
 
 mybatis:
-  config-location: classpath:generator/mybatis-config.xml
+ config-location: classpath:mybatis-config.xml
 
+#mybatis:
+#  mapper-locations: classpath*:com/mars/**/mapper/*Mapper.xml
+#  type-aliases-package: com.mars.*.model

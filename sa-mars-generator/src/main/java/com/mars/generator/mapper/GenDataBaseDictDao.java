@@ -2,7 +2,6 @@ package com.mars.generator.mapper;
 
 import com.mars.generator.model.GenTable;
 import com.mars.generator.model.GenTableColumn;
-import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
@@ -11,7 +10,6 @@ import java.util.List;
  * @author stonew
  * @data 2017-07-25 14:57
  **/
-@Mapper
 public interface GenDataBaseDictDao {
     /**
      * 查询表列表

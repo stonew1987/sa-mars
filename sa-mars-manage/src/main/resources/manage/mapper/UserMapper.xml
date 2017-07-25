@@ -39,7 +39,7 @@
     update sa_user set is_deleted = 'Y'
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.mars.manage.model.User">
+  <insert id="insert" parameterType="User">
     insert into sa_user (id, company_id, dept_id, 
       login_name, password, account_id, 
       user_name, email, phone, 
@@ -55,7 +55,7 @@
       #{modifierId,jdbcType=BIGINT}, #{gmtCreated,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP}, 
       #{isDeleted,jdbcType=CHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.mars.manage.model.User">
+  <insert id="insertSelective" parameterType="User">
     insert into sa_user
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -176,7 +176,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.mars.manage.model.User">
+  <update id="updateByPrimaryKeySelective" parameterType="User">
     update sa_user
     <set>
       <if test="companyId != null">
@@ -236,7 +236,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.mars.manage.model.User">
+  <update id="updateByPrimaryKey" parameterType="User">
     update sa_user
     set company_id = #{companyId,jdbcType=BIGINT},
       dept_id = #{deptId,jdbcType=BIGINT},
@@ -259,7 +259,7 @@
     where id = #{id,jdbcType=BIGINT}
   </update>
 
-  <select id="selectUserList" parameterType="com.mars.manage.model.User" resultType="com.mars.manage.model.User">
+  <select id="selectUserList" parameterType="User" resultType="User">
     select
       <include refid="Base_Column_List"/>
     from sa_user
