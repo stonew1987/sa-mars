@@ -259,7 +259,7 @@
     where id = #{id,jdbcType=BIGINT}
   </update>
 
-  <select id="selectUserList" parameterMap="com.mars.manage.model.User" resultType="com.mars.manage.model.User">
+  <select id="selectUserList" parameterType="com.mars.manage.model.User" resultType="com.mars.manage.model.User">
     select
       <include refid="Base_Column_List"/>
     from sa_user

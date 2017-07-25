@@ -3,27 +3,27 @@
 <mapper namespace="com.mars.generator.mapper.GenDataBaseDictDao">
     
 	<select id="getTableList" resultType="GenTable">
-		<if test="dbName == 'oracle'">
-			SELECT 
-				t.TABLE_NAME AS name, 
-				c.COMMENTS AS comments
-			FROM user_tables t, user_tab_comments c 
-			WHERE t.table_name = c.table_name
-			<if test="name != null and name != ''">
-				AND t.TABLE_NAME = upper(#{name})
-			</if>
-			ORDER BY t.TABLE_NAME
-		</if>
-		<if test="dbName == 'mssql'">
-			SELECT t.name AS name,b.value AS comments 
-			FROM sys.objects t LEFT JOIN sys.extended_properties b ON b.major_id=t.object_id and b.minor_id=0 and b.class=1 AND b.name='MS_Description'
-			WHERE t.type='U'
-			<if test="name != null and name != ''">
-				AND t.name = (#{name})
-			</if>
-			ORDER BY t.name
-		</if>
-		<if test="dbName == 'mysql'">			
+		<!--<if test="dbName == 'oracle'">-->
+			<!--SELECT -->
+				<!--t.TABLE_NAME AS name, -->
+				<!--c.COMMENTS AS comments-->
+			<!--FROM user_tables t, user_tab_comments c -->
+			<!--WHERE t.table_name = c.table_name-->
+			<!--<if test="name != null and name != ''">-->
+				<!--AND t.TABLE_NAME = upper(#{name})-->
+			<!--</if>-->
+			<!--ORDER BY t.TABLE_NAME-->
+		<!--</if>-->
+		<!--<if test="dbName == 'mssql'">-->
+			<!--SELECT t.name AS name,b.value AS comments -->
+			<!--FROM sys.objects t LEFT JOIN sys.extended_properties b ON b.major_id=t.object_id and b.minor_id=0 and b.class=1 AND b.name='MS_Description'-->
+			<!--WHERE t.type='U'-->
+			<!--<if test="name != null and name != ''">-->
+				<!--AND t.name = (#{name})-->
+			<!--</if>-->
+			<!--ORDER BY t.name-->
+		<!--</if>-->
+		<!--<if test="dbName == 'mysql'">			-->
 			SELECT t.table_name AS name,t.TABLE_COMMENT AS comments 
 			FROM information_schema.`TABLES` t 
 			WHERE t.TABLE_SCHEMA = (select database())
@@ -31,7 +31,7 @@
 				AND t.TABLE_NAME = (#{name})
 			</if>
 			ORDER BY t.TABLE_NAME
-		</if>
+		<!--</if>-->
 	</select>
 	
 	<select id="getTableColumnList" resultType="GenTableColumn">

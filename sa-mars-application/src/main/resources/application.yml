@@ -12,4 +12,6 @@ spring:
         password: arm_123456
         driver-class: com.mysql.jdbc.Driver
 
+mybatis:
+  config-location: classpath:generator/mybatis-config.xml
 

@@ -7,7 +7,7 @@ package com.mars.pay;
  * @data 2017-07-21 11:01
  **/
 
-public class HelloController {
+public class HelloController111 {
 
 
 }
