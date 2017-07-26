@@ -45,7 +45,7 @@ public class GenTableController {
     public BaseResult<String> generateCode(GenScheme genScheme) {
         genScheme.setName("单表");
         genScheme.setCategory("curd");
-        genScheme.setPackageName("com/mars/");
+        genScheme.setPackageName("com.mars");
         genScheme.setModuleName("generator");
         genScheme.setFunctionName("单表生成");
         genScheme.setReplaceFile(false);

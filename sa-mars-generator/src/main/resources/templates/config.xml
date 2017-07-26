@@ -7,8 +7,8 @@
 		</category>
 		<category value="dao" label="仅持久层（dao/entity/mapper）">
 			<template>dao/dao.xml</template>
-			<!--<template>dao/entity.xml</template>-->
-			<!--<template>dao/mapper.xml</template>-->
+			<template>dao/entity.xml</template>
+			<template>dao/mapper.xml</template>
 		</category>
 	</category>
 	<!-- java类型 -->

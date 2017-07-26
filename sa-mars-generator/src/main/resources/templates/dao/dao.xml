@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <template>
-	<name>mapper</name>
-	<filePath>src/main/java/com/mars/generator/mapper</filePath>
-	<fileName>SaUserMapper.java</fileName>
+	<name>dao</name>
+	<filePath>src/main/java/${packageName}/${moduleName}/mapper/${subModuleName}</filePath>
+	<fileName>${ClassName}Mapper.java</fileName>
 	<content><![CDATA[
-package com.mars.generator.mapper;
-import com.mars.generator.model.SaUser;
-public interface SaUserMapper extends BaseMapper<SaUser> {
+package ${packageName}.${moduleName}.mapper<#if subModuleName != "">.${subModuleName}</#if>;
+
+import ${packageName}.${moduleName}.model<#if subModuleName != "">.${subModuleName}</#if>.${ClassName};
+import com.mars.share.common.mapper.BaseMapper;
+
+public interface ${ClassName}Mapper extends BaseMapper<${ClassName}> {
 	
 }]]>
 	</content>
