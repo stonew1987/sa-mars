@@ -35,4 +35,11 @@ public interface GenTableService{
      */
     BaseResult<List<String>> getTablePK(GenTable genTable);
 
+    /**
+     * 获取物理数据表列表
+     * @param genTable
+     * @return
+     */
+    BaseResult<GenTable> getTableFormDb(GenTable genTable);
+
 }

@@ -18,7 +18,7 @@
 		WHERE a.id = #{id}
 	</select>
 	
-	<select id="findList" resultType="GenTable">
+	<select id="getList" resultType="GenTable">
 		SELECT 
 			<include refid="genTableColumns"/>
 		FROM gen_table a

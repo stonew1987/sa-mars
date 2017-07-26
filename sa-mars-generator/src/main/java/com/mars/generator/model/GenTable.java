@@ -1,6 +1,9 @@
 package com.mars.generator.model;
 
+import com.google.common.collect.Lists;
 import com.mars.share.common.model.BaseEntity;
+
+import java.util.List;
 
 /**
  * 业务表Entity
@@ -17,6 +20,15 @@ public class GenTable extends BaseEntity{
     private String className;		// 实体类名称
     private String parentTable;		// 关联父表
     private String parentTableFk;		// 关联父表外键
+
+    private List<GenTableColumn> columnList = Lists.newArrayList();	// 表列
+
+    private String nameLike; 	// 按名称模糊查询
+
+    private List<String> pkList; // 当前表主键列表
+
+    private GenTable parent;	// 父表对象
+    private List<GenTable> childList = Lists.newArrayList();	// 子表列表
 
     public String getName() {
         return name;
@@ -57,4 +69,45 @@ public class GenTable extends BaseEntity{
     public void setParentTableFk(String parentTableFk) {
         this.parentTableFk = parentTableFk;
     }
+
+    public List<GenTableColumn> getColumnList() {
+        return columnList;
+    }
+
+    public void setColumnList(List<GenTableColumn> columnList) {
+        this.columnList = columnList;
+    }
+
+    public String getNameLike() {
+        return nameLike;
+    }
+
+    public void setNameLike(String nameLike) {
+        this.nameLike = nameLike;
+    }
+
+    public List<String> getPkList() {
+        return pkList;
+    }
+
+    public void setPkList(List<String> pkList) {
+        this.pkList = pkList;
+    }
+
+    public GenTable getParent() {
+        return parent;
+    }
+
+    public void setParent(GenTable parent) {
+        this.parent = parent;
+    }
+
+    public List<GenTable> getChildList() {
+        return childList;
+    }
+
+    public void setChildList(List<GenTable> childList) {
+        this.childList = childList;
+    }
+
 }

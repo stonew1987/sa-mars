@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<template>
+	<name>mapper</name>
+	<filePath>src/main/java/${packageName}/${moduleName}/mapper</filePath>
+	<fileName>${ClassName}Mapper.java</fileName>
+	<content><![CDATA[
+package ${packageName}.${moduleName}.mapper;
+import ${packageName}.${moduleName}.model.${ClassName};
+public interface ${ClassName}Mapper extends BaseMapper<${ClassName}> {
+	
+}]]>
+	</content>
+</template>

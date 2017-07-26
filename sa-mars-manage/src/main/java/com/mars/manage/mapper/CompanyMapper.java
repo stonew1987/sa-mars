@@ -1,8 +1,9 @@
 package com.mars.manage.mapper;
 
 import com.mars.manage.model.Company;
+import org.apache.ibatis.annotations.Mapper;
 
-
+@Mapper
 public interface CompanyMapper {
     int deleteByPrimaryKey(Long id);
 
