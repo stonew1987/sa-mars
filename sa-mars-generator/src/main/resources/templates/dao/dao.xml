@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <template>
 	<name>mapper</name>
-	<filePath>src/main/java/${packageName}/${moduleName}/mapper</filePath>
-	<fileName>${ClassName}Mapper.java</fileName>
+	<filePath>src/main/java/com/mars/generator/mapper</filePath>
+	<fileName>SaUserMapper.java</fileName>
 	<content><![CDATA[
-package ${packageName}.${moduleName}.mapper;
-import ${packageName}.${moduleName}.model.${ClassName};
-public interface ${ClassName}Mapper extends BaseMapper<${ClassName}> {
+package com.mars.generator.mapper;
+import com.mars.generator.model.SaUser;
+public interface SaUserMapper extends BaseMapper<SaUser> {
 	
 }]]>
 	</content>

@@ -20,6 +20,7 @@ public class FreeMarkers {
 
 	public static String renderString(String templateString, Map<String, ?> model) {
 		try {
+			templateString = "src/main/java/com/mars/generator/mapper";
 			StringWriter result = new StringWriter();
 			Reader reader = new StringReader(templateString);
 			Template t = new Template("name", reader, new Configuration());
