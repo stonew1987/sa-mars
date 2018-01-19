@@ -8,7 +8,7 @@ import java.util.Date;
 @Getter
 @ToString
 @Builder
-public class RoleMenu extends RoleMenuKey {
+public class RoleMenu{
     private String remarks;
 
     private Long creatorId;

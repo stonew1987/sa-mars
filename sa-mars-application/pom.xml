@@ -7,34 +7,37 @@
 		<groupId>com.mars</groupId>
 		<artifactId>sa-mars</artifactId>
 		<version>0.0.1</version>
-		<relativePath>../pom.xml</relativePath>
 	</parent>
 
 	<groupId>com.mars.application</groupId>
 	<artifactId>sa-mars-application</artifactId>
-	<version>0.0.1</version>
-	<packaging>jar</packaging>
+	<version>${sa-mars-application}</version>
+	<description>application project for Spring Boot</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
 
 	<dependencies>
 		<dependency>
-			<groupId>com.mars.manage</groupId>
+			<groupId>com.mars</groupId>
 			<artifactId>sa-mars-admin</artifactId>
-			<version>0.0.1</version>
+			<version>${sa-mars-admin}</version>
 		</dependency>
 		<dependency>
-			<groupId>com.mars.wechat</groupId>
+			<groupId>com.mars</groupId>
+			<artifactId>sa-mars-share</artifactId>
+			<version>${sa-mars-share}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.mars</groupId>
 			<artifactId>sa-mars-wechat</artifactId>
-			<version>0.0.1</version>
+			<version>${sa-mars-wechat}</version>
 		</dependency>
 		<dependency>
-			<groupId>com.mars.pay</groupId>
+			<groupId>com.mars</groupId>
 			<artifactId>sa-mars-pay</artifactId>
-			<version>0.0.1</version>
+			<version>${sa-mars-pay}</version>
 		</dependency>
 
 	</dependencies>

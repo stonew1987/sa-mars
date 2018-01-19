@@ -20,4 +20,7 @@ public class SaMarsApplication {
 		SpringApplication.run(SaMarsApplication.class, args);
 	}
 
+
+
+
 }

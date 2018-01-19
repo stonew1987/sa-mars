@@ -5,18 +5,18 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
-    <typeAliases>
-        <package name="com.mars.generator.model"/>
-        <package name="com.mars.manage.model"/>
-    </typeAliases>
+    <!--<typeAliases>-->
+        <!--<package name="com.mars.generator.model"/>-->
+        <!--<package name="com.mars.manage.model"/>-->
+    <!--</typeAliases>-->
 
-    <mappers>
-        <mapper resource="generator/mapper/GenDataBaseDict.xml"/>
-        <mapper resource="manage/mapper/UserMapper.xml"/>
-        <!--<mapper resource="generator/mapper/GenScheme.xml"/>-->
-        <!--<mapper resource="generator/mapper/GenTable.xml"/>-->
-        <!--<mapper resource="generator/mapper/GenTableColume.xml"/>-->
-        <!--<mapper resource="generator/mapper/GenTemplate.xml"/>-->
-    </mappers>
+    <!--<mappers>-->
+        <!--&lt;!&ndash;<mapper resource="generator/mapper/GenDataBaseDict.xml"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;<mapper resource="manage/mapper/UserMapper.xml"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;<mapper resource="generator/mapper/GenScheme.xml"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;<mapper resource="generator/mapper/GenTable.xml"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;<mapper resource="generator/mapper/GenTableColume.xml"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;<mapper resource="generator/mapper/GenTemplate.xml"/>&ndash;&gt;-->
+    <!--</mappers>-->
 
 </configuration>

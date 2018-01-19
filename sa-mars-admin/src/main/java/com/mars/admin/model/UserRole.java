@@ -8,7 +8,7 @@ import java.util.Date;
 @Setter
 @Getter
 @Builder
-public class UserRole extends UserRoleKey {
+public class UserRole{
     private String remarks;
 
     private Long creatorId;

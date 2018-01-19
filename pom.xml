@@ -28,6 +28,9 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<lombok.version>1.16.18</lombok.version>
+		<sa-mars-application>0.0.1</sa-mars-application>
+		<sa-mars-share>0.0.1</sa-mars-share>
+		<sa-mars-share>0.0.1</sa-mars-share>
 	</properties>
 
 	<dependencies>

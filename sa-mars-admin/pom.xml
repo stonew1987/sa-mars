@@ -3,29 +3,23 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.mars.admin</groupId>
-	<artifactId>sa-mars-admin</artifactId>
-	<version>0.0.1</version>
-	<packaging>jar</packaging>
-
-	<name>sa-mars-admin</name>
-	<description>Demo project for Spring Boot</description>
-
 	<parent>
 		<groupId>com.mars</groupId>
 		<artifactId>sa-mars</artifactId>
 		<version>0.0.1</version>
-		<relativePath>../pom.xml</relativePath>
 	</parent>
+
+	<artifactId>sa-mars-admin</artifactId>
+	<version>${sa-mars-admin}</version>
+	<name>sa-mars-admin</name>
+	<description>Demo project for Spring Boot</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
 
+
 	<dependencies>
-
-
     </dependencies>
 
 	<build>
