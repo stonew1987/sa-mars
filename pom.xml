@@ -10,11 +10,9 @@
 
 	<modules>
 		<module>sa-mars-application</module>
-		<module>sa-mars-manage</module>
-		<module>sa-mars-web</module>
+		<module>sa-mars-admin</module>
 		<module>sa-mars-wechat</module>
 		<module>sa-mars-pay</module>
-		<module>sa-mars-generator</module>
 		<module>sa-mars-share</module>
 	</modules>
 

@@ -18,18 +18,12 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>1.7</java.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>com.mars.manage</groupId>
-			<artifactId>sa-mars-manage</artifactId>
-			<version>0.0.1</version>
-		</dependency>
-		<dependency>
-			<groupId>com.mars.web</groupId>
-			<artifactId>sa-mars-web</artifactId>
+			<artifactId>sa-mars-admin</artifactId>
 			<version>0.0.1</version>
 		</dependency>
 		<dependency>
@@ -40,11 +34,6 @@
 		<dependency>
 			<groupId>com.mars.pay</groupId>
 			<artifactId>sa-mars-pay</artifactId>
-			<version>0.0.1</version>
-		</dependency>
-		<dependency>
-			<groupId>com.mars.generator</groupId>
-			<artifactId>sa-mars-generator</artifactId>
 			<version>0.0.1</version>
 		</dependency>
 
