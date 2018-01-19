@@ -1,5 +1,11 @@
 package com.mars.manage.model;
 
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
 public class RoleMenuKey {
     private Long roleId;
 
@@ -10,23 +16,4 @@ public class RoleMenuKey {
         this.menuId = menuId;
     }
 
-    public RoleMenuKey() {
-        super();
-    }
-
-    public Long getRoleId() {
-        return roleId;
-    }
-
-    public void setRoleId(Long roleId) {
-        this.roleId = roleId;
-    }
-
-    public Long getMenuId() {
-        return menuId;
-    }
-
-    public void setMenuId(Long menuId) {
-        this.menuId = menuId;
-    }
 }
