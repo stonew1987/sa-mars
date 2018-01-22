@@ -20,7 +20,12 @@
 
 
 	<dependencies>
-    </dependencies>
+		<dependency>
+			<groupId>com.mars</groupId>
+			<artifactId>sa-mars-share</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+	</dependencies>
 
 	<build>
 		<plugins>

@@ -1,7 +1,10 @@
 package com.mars.admin.service;
 
 
-import java.util.List;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageInfo;
+import com.mars.admin.dto.UserDTO;
+import com.mars.share.message.BaseResult;
 
 /**
  * 用户service
@@ -11,46 +14,47 @@ import java.util.List;
 
 public interface UserService {
 
-//    /**
-//     * 根据用户ID查询用户信息
-//     * @param id
-//     * @return
-//     */
-//    BaseResult<UserDTO> getUserById(Long id);
-//
-//    /**
-//     * 查询用户List
-//     * @param userDTO
-//     * @return
-//     */
-//    BaseResult<List<UserDTO>> getUserList(UserDTO userDTO);
-//
-//    /**
-//     * 获取分页用户列表
-//     * @param userDTO
-//     * @return
-//     */
-//    BaseResult<PageInfo> getPageUser(UserDTO userDTO);
-//
-//    /**
-//     * 用户添加
-//     * @param userDTO
-//     * @return
-//     */
-//    BaseResult<Integer> addUser(UserDTO userDTO);
-//
-//    /**
-//     * 更新用户
-//     * @param userDTO
-//     * @return
-//     */
-//    BaseResult<Integer> updateUser(UserDTO userDTO);
-//
-//    /**
-//     * 根据用户ID删除用户
-//     * @param id
-//     * @return
-//     */
-//    BaseResult<Integer> deleteUserById(Long id);
+    /**
+     * 用户添加
+     * @param userDTO
+     * @return
+     */
+    BaseResult<Integer> insertUser(UserDTO userDTO);
+
+    /**
+     * 用户删除
+     * @param id
+     * @return
+     */
+    BaseResult<Integer> deleteUser(Long id);
+
+    /**
+     * 获取用户分页列表
+     * @param userDTO
+     * @return
+     */
+    BaseResult<PageInfo> listUserPage(UserDTO userDTO, Page page);
+
+    /**
+     * 根据主键更新用户信息
+     * @param userDTO
+     * @return
+     */
+    BaseResult<Integer> updateUser(UserDTO userDTO);
+
+    /**
+     * 根据主键查询用户信息
+     * @param id
+     * @return
+     */
+    BaseResult<UserDTO> getUserById(Long id);
+
+    /**
+     * 根据用户名查询用户信息
+     * @param username
+     * @return
+     */
+    BaseResult<UserDTO> getUserByUserName(String username);
+
 
 }
