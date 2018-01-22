@@ -14,6 +14,7 @@ import java.util.Date;
 @ToString
 @Builder
 public class Menu {
+
     private Long id;
 
     private Long parentId;

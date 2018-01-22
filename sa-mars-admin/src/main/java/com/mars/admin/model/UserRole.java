@@ -9,6 +9,11 @@ import java.util.Date;
 @Getter
 @Builder
 public class UserRole{
+
+    private Long userId;
+
+    private Long roleId;
+
     private String remarks;
 
     private Long creatorId;

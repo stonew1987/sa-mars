@@ -29,16 +29,19 @@
     user_type, login_ip, last_login_date, login_flag, remarks, creator_id, modifier_id, 
     gmt_created, gmt_modified, is_deleted
   </sql>
+
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from sa_user
     where id = #{id,jdbcType=BIGINT}
   </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     update sa_user set is_deleted = 'Y'
     where id = #{id,jdbcType=BIGINT}
   </delete>
+
   <insert id="insert" parameterType="User">
     insert into sa_user (id, company_id, dept_id, 
       login_name, password, account_id, 
@@ -55,6 +58,7 @@
       #{modifierId,jdbcType=BIGINT}, #{gmtCreated,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP}, 
       #{isDeleted,jdbcType=CHAR})
   </insert>
+
   <insert id="insertSelective" parameterType="User">
     insert into sa_user
     <trim prefix="(" suffix=")" suffixOverrides=",">

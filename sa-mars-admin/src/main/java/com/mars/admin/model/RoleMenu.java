@@ -9,6 +9,11 @@ import java.util.Date;
 @ToString
 @Builder
 public class RoleMenu{
+
+    private Long roleId;
+
+    private Long menuId;
+
     private String remarks;
 
     private Long creatorId;
