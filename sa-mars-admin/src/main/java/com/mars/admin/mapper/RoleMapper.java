@@ -1,9 +1,7 @@
 package com.mars.admin.mapper;
 
 import com.mars.admin.model.Role;
-import org.apache.ibatis.annotations.Mapper;
 
-@Mapper
 public interface RoleMapper {
     int deleteByPrimaryKey(Long id);
 

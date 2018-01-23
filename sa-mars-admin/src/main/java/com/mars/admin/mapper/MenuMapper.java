@@ -1,9 +1,7 @@
 package com.mars.admin.mapper;
 
 import com.mars.admin.model.Menu;
-import org.apache.ibatis.annotations.Mapper;
 
-@Mapper
 public interface MenuMapper {
     int deleteByPrimaryKey(Long id);
 

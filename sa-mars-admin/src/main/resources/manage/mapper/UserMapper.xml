@@ -4,15 +4,12 @@
   <resultMap id="BaseResultMap" type="com.mars.manage.model.User">
     <constructor>
       <idArg column="id" javaType="java.lang.Long" jdbcType="BIGINT" />
-      <arg column="company_id" javaType="java.lang.Long" jdbcType="BIGINT" />
       <arg column="dept_id" javaType="java.lang.Long" jdbcType="BIGINT" />
       <arg column="login_name" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="password" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="account_id" javaType="java.lang.Long" jdbcType="BIGINT" />
       <arg column="user_name" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="email" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="phone" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="user_type" javaType="java.lang.String" jdbcType="CHAR" />
       <arg column="login_ip" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="last_login_date" javaType="java.util.Date" jdbcType="TIMESTAMP" />
       <arg column="login_flag" javaType="java.lang.String" jdbcType="VARCHAR" />
@@ -25,8 +22,7 @@
     </constructor>
   </resultMap>
   <sql id="Base_Column_List">
-    id, company_id, dept_id, login_name, password, account_id, user_name, email, phone, 
-    user_type, login_ip, last_login_date, login_flag, remarks, creator_id, modifier_id, 
+    id, dept_id, login_name, password, user_name, email, phone, login_ip, last_login_date, login_flag, remarks, creator_id, modifier_id,
     gmt_created, gmt_modified, is_deleted
   </sql>
 
@@ -43,17 +39,16 @@
   </delete>
 
   <insert id="insert" parameterType="User">
-    insert into sa_user (id, company_id, dept_id, 
-      login_name, password, account_id, 
-      user_name, email, phone, 
-      user_type, login_ip, last_login_date, 
+    insert into sa_user (id, dept_id,
+      login_name, password,
+      user_name, email, phone, login_ip, last_login_date,
       login_flag, remarks, creator_id, 
       modifier_id, gmt_created, gmt_modified, 
       is_deleted)
-    values (#{id,jdbcType=BIGINT}, #{companyId,jdbcType=BIGINT}, #{deptId,jdbcType=BIGINT}, 
-      #{loginName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{accountId,jdbcType=BIGINT}, 
+    values (#{id,jdbcType=BIGINT}, #{deptId,jdbcType=BIGINT},
+      #{loginName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
       #{userName,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
-      #{userType,jdbcType=CHAR}, #{loginIp,jdbcType=VARCHAR}, #{lastLoginDate,jdbcType=TIMESTAMP}, 
+      #{loginIp,jdbcType=VARCHAR}, #{lastLoginDate,jdbcType=TIMESTAMP},
       #{loginFlag,jdbcType=VARCHAR}, #{remarks,jdbcType=VARCHAR}, #{creatorId,jdbcType=BIGINT}, 
       #{modifierId,jdbcType=BIGINT}, #{gmtCreated,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP}, 
       #{isDeleted,jdbcType=CHAR})
@@ -65,9 +60,6 @@
       <if test="id != null">
         id,
       </if>
-      <if test="companyId != null">
-        company_id,
-      </if>
       <if test="deptId != null">
         dept_id,
       </if>
@@ -77,9 +69,6 @@
       <if test="password != null">
         password,
       </if>
-      <if test="accountId != null">
-        account_id,
-      </if>
       <if test="userName != null">
         user_name,
       </if>
@@ -88,9 +77,6 @@
       </if>
       <if test="phone != null">
         phone,
-      </if>
-      <if test="userType != null">
-        user_type,
       </if>
       <if test="loginIp != null">
         login_ip,
@@ -124,9 +110,6 @@
       <if test="id != null">
         #{id,jdbcType=BIGINT},
       </if>
-      <if test="companyId != null">
-        #{companyId,jdbcType=BIGINT},
-      </if>
       <if test="deptId != null">
         #{deptId,jdbcType=BIGINT},
       </if>
@@ -136,9 +119,6 @@
       <if test="password != null">
         #{password,jdbcType=VARCHAR},
       </if>
-      <if test="accountId != null">
-        #{accountId,jdbcType=BIGINT},
-      </if>
       <if test="userName != null">
         #{userName,jdbcType=VARCHAR},
       </if>
@@ -147,9 +127,6 @@
       </if>
       <if test="phone != null">
         #{phone,jdbcType=VARCHAR},
-      </if>
-      <if test="userType != null">
-        #{userType,jdbcType=CHAR},
       </if>
       <if test="loginIp != null">
         #{loginIp,jdbcType=VARCHAR},
@@ -183,9 +160,6 @@
   <update id="updateByPrimaryKeySelective" parameterType="User">
     update sa_user
     <set>
-      <if test="companyId != null">
-        company_id = #{companyId,jdbcType=BIGINT},
-      </if>
       <if test="deptId != null">
         dept_id = #{deptId,jdbcType=BIGINT},
       </if>
@@ -195,9 +169,6 @@
       <if test="password != null">
         password = #{password,jdbcType=VARCHAR},
       </if>
-      <if test="accountId != null">
-        account_id = #{accountId,jdbcType=BIGINT},
-      </if>
       <if test="userName != null">
         user_name = #{userName,jdbcType=VARCHAR},
       </if>
@@ -206,9 +177,6 @@
       </if>
       <if test="phone != null">
         phone = #{phone,jdbcType=VARCHAR},
-      </if>
-      <if test="userType != null">
-        user_type = #{userType,jdbcType=CHAR},
       </if>
       <if test="loginIp != null">
         login_ip = #{loginIp,jdbcType=VARCHAR},
@@ -242,15 +210,13 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="User">
     update sa_user
-    set company_id = #{companyId,jdbcType=BIGINT},
+    set
       dept_id = #{deptId,jdbcType=BIGINT},
       login_name = #{loginName,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
-      account_id = #{accountId,jdbcType=BIGINT},
       user_name = #{userName,jdbcType=VARCHAR},
       email = #{email,jdbcType=VARCHAR},
       phone = #{phone,jdbcType=VARCHAR},
-      user_type = #{userType,jdbcType=CHAR},
       login_ip = #{loginIp,jdbcType=VARCHAR},
       last_login_date = #{lastLoginDate,jdbcType=TIMESTAMP},
       login_flag = #{loginFlag,jdbcType=VARCHAR},
@@ -271,9 +237,6 @@
       <if test="id != null">
         id = #{id,jdbcType=BIGINT},
       </if>
-      <if test="companyId != null">
-        company_id = #{companyId,jdbcType=BIGINT},
-      </if>
       <if test="deptId != null">
         dept_id = #{deptId,jdbcType=BIGINT},
       </if>
@@ -283,9 +246,6 @@
       <if test="password != null">
         password = #{password,jdbcType=VARCHAR},
       </if>
-      <if test="accountId != null">
-        account_id = #{accountId,jdbcType=BIGINT},
-      </if>
       <if test="userName != null">
         user_name = #{userName,jdbcType=VARCHAR},
       </if>
@@ -294,9 +254,6 @@
       </if>
       <if test="phone != null">
         phone = #{phone,jdbcType=VARCHAR},
-      </if>
-      <if test="userType != null">
-        user_type = #{userType,jdbcType=CHAR},
       </if>
       <if test="loginIp != null">
         login_ip = #{loginIp,jdbcType=VARCHAR},

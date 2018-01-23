@@ -12,9 +12,8 @@ import java.util.Date;
 @ToString
 @Builder
 public class User {
-    private Long id;
 
-    private Long companyId;
+    private Long id;
 
     private Long deptId;
 
@@ -22,15 +21,11 @@ public class User {
 
     private String password;
 
-    private Long accountId;
-
     private String userName;
 
     private String email;
 
     private String phone;
-
-    private String userType;
 
     private String loginIp;
 

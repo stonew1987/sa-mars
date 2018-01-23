@@ -12,35 +12,28 @@ import java.util.Date;
 @AllArgsConstructor
 @ToString
 @Builder
-public class Company {
+public class Dept {
+    //主键
     private Long id;
-
+    //上级部门id
     private Long parentId;
-
-    private String companyName;
-
-    private String companyCode;
-
-    private String companyType;
-
-    private String address;
-
-    private String companyEmail;
-
-    private String status;
-
-    private String sort;
-
+    //部门名称
+    private String deptName;
+    //部门层级
+    private String level;
+    //部门在当前层级下的顺序，由小到大
+    private Long sort;
+    //备注
     private String remarks;
-
+    //创建人
     private Long creatorId;
-
+    //修改人
     private Long modifierId;
-
+    //创建人
     private Date gmtCreated;
-
+    //最后修改时间
     private Date gmtModified;
-
+    //删除状态
     private String isDeleted;
 
 }

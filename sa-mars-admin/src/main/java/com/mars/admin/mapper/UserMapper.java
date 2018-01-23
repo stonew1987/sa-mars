@@ -1,10 +1,8 @@
 package com.mars.admin.mapper;
 
 import com.mars.admin.model.User;
-import org.apache.ibatis.annotations.Mapper;
-
 import java.util.List;
-@Mapper
+
 public interface UserMapper {
     int deleteByPrimaryKey(Long id);
 

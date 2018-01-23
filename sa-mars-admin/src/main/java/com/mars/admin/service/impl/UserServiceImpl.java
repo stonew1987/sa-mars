@@ -9,6 +9,7 @@ import com.mars.admin.model.User;
 import com.mars.admin.service.UserService;
 import com.mars.share.enums.CodeEnum;
 import com.mars.share.message.BaseResult;
+import com.mars.share.utils.BeanValidator;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
@@ -32,11 +33,12 @@ public class UserServiceImpl implements UserService{
     public BaseResult<Integer> insertUser(UserDTO userDTO) {
         User user = new User();
         try {
+            BeanValidator.check(userDTO);
             BeanUtils.copyProperties(user,userDTO);
             userMapper.insert(user);
             return BaseResult.createBySuccess();
         } catch (Exception e){
-            log.error("保存用户信息userDTO = {}失败，message = {}", userDTO, e.getMessage());
+            log.error("保存用户信息userDTO = {}失败，message = {}", userDTO, e.getMessage(), e);
             return BaseResult.createByError(CodeEnum.CMN_CREATE_ERR);
         }
     }
@@ -47,7 +49,7 @@ public class UserServiceImpl implements UserService{
             userMapper.deleteByPrimaryKey(id);
             return BaseResult.createBySuccess();
         } catch (Exception e){
-            log.error("删除用户信息id= {}失败，message = {}", id, e.getMessage());
+            log.error("删除用户信息id= {}失败，message = {}", id, e.getMessage(), e);
             return BaseResult.createByError(CodeEnum.CMN_DELETE_ERR);
         }
     }
@@ -62,7 +64,7 @@ public class UserServiceImpl implements UserService{
             PageInfo pageInfo = new PageInfo(list);
             return BaseResult.createBySuccess(pageInfo);
         } catch (Exception e){
-            log.error("查询用户分页信息userDTO = {}失败，message = {}", userDTO, e.getMessage());
+            log.error("查询用户分页信息userDTO = {}失败，message = {}", userDTO, e.getMessage(), e);
             return BaseResult.createByError(CodeEnum.CMN_QUERY_ERR);
         }
     }
@@ -75,7 +77,7 @@ public class UserServiceImpl implements UserService{
             BeanUtils.copyProperties(userVo,user);
             return BaseResult.createBySuccess(userVo);
         } catch (Exception e){
-            log.error("根据主键id = {} 查询用户信息失败，message = {}", id, e.getMessage());
+            log.error("根据主键id = {} 查询用户信息失败，message = {}", id, e.getMessage(), e);
             return BaseResult.createByError(CodeEnum.CMN_QUERY_ERR);
         }
     }
@@ -88,7 +90,7 @@ public class UserServiceImpl implements UserService{
             BeanUtils.copyProperties(userDTO,user);
             return BaseResult.createBySuccess(userDTO);
         } catch (Exception e){
-            log.error("根据用户名username = {}查询用户信息失败，message = {}", username, e.getMessage());
+            log.error("根据用户名username = {}查询用户信息失败，message = {}", username, e.getMessage(), e);
             return BaseResult.createByError(CodeEnum.CMN_QUERY_ERR);
         }
     }
@@ -101,7 +103,7 @@ public class UserServiceImpl implements UserService{
             userMapper.updateByPrimaryKeySelective(user);
             return BaseResult.createBySuccess();
         } catch (Exception e){
-            log.error("修改用户信息userDTO = {}失败，message = {}", userDTO, e.getMessage());
+            log.error("修改用户信息userDTO = {}失败，message = {}", userDTO, e.getMessage(), e);
             return BaseResult.createByError(CodeEnum.CMN_UPDATE_ERR);
         }
     }
