@@ -14,8 +14,8 @@ CREATE TABLE `sa_user` (
   `last_login_date` datetime DEFAULT NULL COMMENT '最后登录时间',
   `login_flag` varchar(64) DEFAULT NULL COMMENT '是否可登录',
   `remarks` varchar(255) DEFAULT NULL COMMENT '备注',
-  `creator_id` bigint(20) NOT NULL COMMENT '创建人',
-  `modifier_id` bigint(20) NOT NULL COMMENT '修改人',
+  `creator` bigint(20) NOT NULL COMMENT '创建人',
+  `modifier` bigint(20) NOT NULL COMMENT '修改人',
   `gmt_created` datetime NOT NULL COMMENT '创建时间',
   `gmt_modified` datetime NOT NULL COMMENT '修改时间',
   `is_deleted` char(1) NOT NULL COMMENT '删除标识',
@@ -35,13 +35,34 @@ CREATE TABLE `sa_dept` (
   `level` varchar(100) DEFAULT NULL COMMENT '部门层级',
   `sort` int(11) DEFAULT NULL COMMENT '部门在当前层级下的顺序，由小到大',
   `remarks` varchar(255) DEFAULT NULL COMMENT '备注',
-  `creator_id` bigint(20) NOT NULL COMMENT '创建人',
-  `modifier_id` bigint(20) NOT NULL COMMENT '修改人',
+  `creator` bigint(20) NOT NULL COMMENT '创建人',
+  `modifier` bigint(20) NOT NULL COMMENT '修改人',
   `gmt_created` datetime NOT NULL COMMENT '创建时间',
   `gmt_modified` datetime NOT NULL COMMENT '修改时间',
   `is_deleted` char(1) NOT NULL COMMENT '删除标识',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1001 DEFAULT CHARSET=utf8 COMMENT='系统部门表';
+
+
+-- ----------------------------
+--  系统角色表
+-- ----------------------------
+DROP TABLE IF EXISTS `sa_role`;
+CREATE TABLE `sa_role` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '角色主键',
+  `role_name` varchar(100) NOT NULL COMMENT '角色名称',
+  `role_code` varchar(100) NOT NULL COMMENT '角色编号',
+  `role_type` char(1) NOT NULL COMMENT '角色类型',
+  `status` char(1) DEFAULT NULL COMMENT '角色状态',
+  `remarks` varchar(255) DEFAULT NULL COMMENT '备注',
+  `creator` bigint(20) NOT NULL COMMENT '创建人',
+  `modifier` bigint(20) NOT NULL COMMENT '修改人',
+  `gmt_created` datetime NOT NULL COMMENT '创建时间',
+  `gmt_modified` datetime NOT NULL COMMENT '修改时间',
+  `is_deleted` char(1) NOT NULL DEFAULT 'N' COMMENT '删除标识',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='系统角色表';
+
 
 
 

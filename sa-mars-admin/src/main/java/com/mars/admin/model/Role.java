@@ -11,28 +11,28 @@ import java.util.Date;
 @ToString
 @Builder
 public class Role {
+
+    //角色主键
     private Long id;
-
-    private Long orgId;
-
+    //角色名称
     private String roleName;
-
+    //角色编码
     private String roleCode;
-
+    //角色类型
     private String roleType;
-
+    //角色状态
     private String status;
-
+    //备注
     private String remarks;
-
-    private Long creatorId;
-
-    private Long modifierId;
-
+    //创建人
+    private Long creator;
+    //修改人
+    private Long modifier;
+    //创建人
     private Date gmtCreated;
-
+    //最后修改时间
     private Date gmtModified;
-
+    //删除状态
     private String isDeleted;
 
 }

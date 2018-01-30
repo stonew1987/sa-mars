@@ -3,6 +3,7 @@ package com.mars.admin.mapper;
 import com.mars.admin.model.UserRole;
 
 public interface UserRoleMapper {
+
     int deleteByPrimaryKey();
 
     int insert(UserRole record);

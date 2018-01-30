@@ -6,15 +6,15 @@
       <idArg column="user_id" javaType="java.lang.Long" jdbcType="BIGINT" />
       <idArg column="role_id" javaType="java.lang.Long" jdbcType="BIGINT" />
       <arg column="remarks" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="creator_id" javaType="java.lang.Long" jdbcType="BIGINT" />
-      <arg column="modifier_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="creator" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="modifier" javaType="java.lang.Long" jdbcType="BIGINT" />
       <arg column="gmt_created" javaType="java.util.Date" jdbcType="TIMESTAMP" />
       <arg column="gmt_modified" javaType="java.util.Date" jdbcType="TIMESTAMP" />
       <arg column="is_deleted" javaType="java.lang.String" jdbcType="CHAR" />
     </constructor>
   </resultMap>
   <sql id="Base_Column_List">
-    user_id, role_id, remarks, creator_id, modifier_id, gmt_created, gmt_modified, is_deleted
+    user_id, role_id, remarks, creator, modifier, gmt_created, gmt_modified, is_deleted
   </sql>
   <select id="selectByPrimaryKey" parameterType="com.mars.manage.model.UserRoleKey" resultMap="BaseResultMap">
     select 
@@ -30,10 +30,10 @@
   </delete>
   <insert id="insert" parameterType="com.mars.manage.model.UserRole">
     insert into sa_user_role (user_id, role_id, remarks, 
-      creator_id, modifier_id, gmt_created, 
+      creator, modifier, gmt_created, 
       gmt_modified, is_deleted)
     values (#{userId,jdbcType=BIGINT}, #{roleId,jdbcType=BIGINT}, #{remarks,jdbcType=VARCHAR}, 
-      #{creatorId,jdbcType=BIGINT}, #{modifierId,jdbcType=BIGINT}, #{gmtCreated,jdbcType=TIMESTAMP}, 
+      #{creator,jdbcType=BIGINT}, #{modifier,jdbcType=BIGINT}, #{gmtCreated,jdbcType=TIMESTAMP}, 
       #{gmtModified,jdbcType=TIMESTAMP}, #{isDeleted,jdbcType=CHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.mars.manage.model.UserRole">
@@ -48,11 +48,11 @@
       <if test="remarks != null">
         remarks,
       </if>
-      <if test="creatorId != null">
-        creator_id,
+      <if test="creator != null">
+        creator,
       </if>
-      <if test="modifierId != null">
-        modifier_id,
+      <if test="modifier != null">
+        modifier,
       </if>
       <if test="gmtCreated != null">
         gmt_created,
@@ -74,11 +74,11 @@
       <if test="remarks != null">
         #{remarks,jdbcType=VARCHAR},
       </if>
-      <if test="creatorId != null">
-        #{creatorId,jdbcType=BIGINT},
+      <if test="creator != null">
+        #{creator,jdbcType=BIGINT},
       </if>
-      <if test="modifierId != null">
-        #{modifierId,jdbcType=BIGINT},
+      <if test="modifier != null">
+        #{modifier,jdbcType=BIGINT},
       </if>
       <if test="gmtCreated != null">
         #{gmtCreated,jdbcType=TIMESTAMP},
@@ -97,11 +97,11 @@
       <if test="remarks != null">
         remarks = #{remarks,jdbcType=VARCHAR},
       </if>
-      <if test="creatorId != null">
-        creator_id = #{creatorId,jdbcType=BIGINT},
+      <if test="creator != null">
+        creator = #{creator,jdbcType=BIGINT},
       </if>
-      <if test="modifierId != null">
-        modifier_id = #{modifierId,jdbcType=BIGINT},
+      <if test="modifier != null">
+        modifier = #{modifier,jdbcType=BIGINT},
       </if>
       <if test="gmtCreated != null">
         gmt_created = #{gmtCreated,jdbcType=TIMESTAMP},
@@ -119,8 +119,8 @@
   <update id="updateByPrimaryKey" parameterType="com.mars.manage.model.UserRole">
     update sa_user_role
     set remarks = #{remarks,jdbcType=VARCHAR},
-      creator_id = #{creatorId,jdbcType=BIGINT},
-      modifier_id = #{modifierId,jdbcType=BIGINT},
+      creator = #{creator,jdbcType=BIGINT},
+      modifier = #{modifier,jdbcType=BIGINT},
       gmt_created = #{gmtCreated,jdbcType=TIMESTAMP},
       gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
       is_deleted = #{isDeleted,jdbcType=CHAR}

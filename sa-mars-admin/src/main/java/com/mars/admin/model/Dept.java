@@ -26,9 +26,9 @@ public class Dept {
     //备注
     private String remarks;
     //创建人
-    private Long creatorId;
+    private Long creator;
     //修改人
-    private Long modifierId;
+    private Long modifier;
     //创建人
     private Date gmtCreated;
     //最后修改时间

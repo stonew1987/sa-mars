@@ -16,9 +16,9 @@ public class RoleMenu{
 
     private String remarks;
 
-    private Long creatorId;
+    private Long creator;
 
-    private Long modifierId;
+    private Long modifier;
 
     private Date gmtCreated;
 
