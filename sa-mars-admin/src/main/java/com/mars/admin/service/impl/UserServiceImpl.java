@@ -8,12 +8,14 @@ import com.mars.admin.mapper.UserMapper;
 import com.mars.admin.model.User;
 import com.mars.admin.service.UserService;
 import com.mars.share.enums.CodeEnum;
+import com.mars.share.enums.YesNoEnum;
 import com.mars.share.message.BaseResult;
 import com.mars.share.utils.BeanValidator;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -35,6 +37,11 @@ public class UserServiceImpl implements UserService{
         try {
             BeanValidator.check(userDTO);
             BeanUtils.copyProperties(user,userDTO);
+            user.setCreator(1L);
+            user.setModifier(1L);
+            user.setGmtCreated(new Date());
+            user.setGmtModified(new Date());
+            user.setIsDeleted(YesNoEnum.No.getCode());
             userMapper.insert(user);
             return BaseResult.createBySuccess();
         } catch (Exception e){

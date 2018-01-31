@@ -5,10 +5,7 @@ import com.github.pagehelper.PageInfo;
 import com.mars.admin.dto.UserDTO;
 import com.mars.admin.service.UserService;
 import com.mars.share.message.BaseResult;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -30,7 +27,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/users", method = RequestMethod.POST)
-    public BaseResult<Integer> insertUser(UserDTO userDTO){
+    public BaseResult<Integer> insertUser(@RequestBody UserDTO userDTO){
         BaseResult<Integer> baseResult = userService.insertUser(userDTO);
         return baseResult;
     }
@@ -48,7 +45,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/users", method = RequestMethod.PUT)
-    public BaseResult<Integer> updateUser(UserDTO userDTO){
+    public BaseResult<Integer> updateUser(@RequestBody UserDTO userDTO){
         BaseResult<Integer> baseResult = userService.updateUser(userDTO);
         return baseResult;
     }
