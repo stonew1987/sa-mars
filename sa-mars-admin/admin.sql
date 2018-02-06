@@ -18,9 +18,9 @@ CREATE TABLE `sa_user` (
   `modifier` bigint(20) NOT NULL COMMENT '修改人',
   `gmt_created` datetime NOT NULL COMMENT '创建时间',
   `gmt_modified` datetime NOT NULL COMMENT '修改时间',
-  `is_deleted` char(1) NOT NULL COMMENT '删除标识',
+  `is_deleted` char(1) NOT NULL DEFAULT 'N' COMMENT '删除标识',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1001 DEFAULT CHARSET=utf8 COMMENT='系统用户表';
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 COMMENT='系统用户表';
 
 
 
@@ -39,9 +39,9 @@ CREATE TABLE `sa_dept` (
   `modifier` bigint(20) NOT NULL COMMENT '修改人',
   `gmt_created` datetime NOT NULL COMMENT '创建时间',
   `gmt_modified` datetime NOT NULL COMMENT '修改时间',
-  `is_deleted` char(1) NOT NULL COMMENT '删除标识',
+  `is_deleted` char(1) NOT NULL DEFAULT 'N' COMMENT '删除标识',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1001 DEFAULT CHARSET=utf8 COMMENT='系统部门表';
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 COMMENT='系统部门表';
 
 
 -- ----------------------------
@@ -61,7 +61,25 @@ CREATE TABLE `sa_role` (
   `gmt_modified` datetime NOT NULL COMMENT '修改时间',
   `is_deleted` char(1) NOT NULL DEFAULT 'N' COMMENT '删除标识',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='系统角色表';
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 COMMENT='系统角色表';
+
+
+-- ----------------------------
+--  系统用户-角色关系表
+-- ----------------------------
+DROP TABLE IF EXISTS `sa_user_role`;
+CREATE TABLE `sa_role` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '角色主键',
+  `role_id` varchar(100) NOT NULL COMMENT '角色表主键ID',
+  `user_id` char(1) NOT NULL COMMENT '用户表主键ID',
+  `remarks` varchar(255) DEFAULT NULL COMMENT '备注',
+  `creator` bigint(20) NOT NULL COMMENT '创建人',
+  `modifier` bigint(20) NOT NULL COMMENT '修改人',
+  `gmt_created` datetime NOT NULL COMMENT '创建时间',
+  `gmt_modified` datetime NOT NULL COMMENT '修改时间',
+  `is_deleted` char(1) NOT NULL DEFAULT 'N' COMMENT '删除标识',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 COMMENT='系统用户角色关系表';
 
 
 
