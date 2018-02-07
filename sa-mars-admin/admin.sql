@@ -82,6 +82,86 @@ CREATE TABLE `sa_role` (
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 COMMENT='系统用户角色关系表';
 
 
+-- ----------------------------
+--  系统用户-系统菜单表
+-- ----------------------------
+DROP TABLE IF EXISTS `sa_menu`;
+CREATE TABLE `sa_menu` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '菜单主键',
+  `menu_name` varchar(100) NOT NULL COMMENT '菜单名称',
+  `menu_url` varchar(100) NOT NULL COMMENT '菜单url',
+  `parent_id` bigint(20) NOT NULL COMMENT '上级菜单ID',
+  `sort` bigint(20) NOT NULL COMMENT '用户表主键ID',
+  `remarks` varchar(255) DEFAULT NULL COMMENT '备注',
+  `creator` bigint(20) NOT NULL COMMENT '创建人',
+  `modifier` bigint(20) NOT NULL COMMENT '修改人',
+  `gmt_created` datetime NOT NULL COMMENT '创建时间',
+  `gmt_modified` datetime NOT NULL COMMENT '修改时间',
+  `is_deleted` char(1) NOT NULL DEFAULT 'N' COMMENT '删除标识',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 COMMENT='系统菜单表';
+
+
+-- ----------------------------
+--  系统用户-系统权限表
+-- ----------------------------
+DROP TABLE IF EXISTS `sa_privilege`;
+CREATE TABLE `sa_privilege` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '权限主键',
+  `privilege_type` varchar(100) NOT NULL COMMENT '权限分类',
+  `remarks` varchar(255) DEFAULT NULL COMMENT '备注',
+  `creator` bigint(20) NOT NULL COMMENT '创建人',
+  `modifier` bigint(20) NOT NULL COMMENT '修改人',
+  `gmt_created` datetime NOT NULL COMMENT '创建时间',
+  `gmt_modified` datetime NOT NULL COMMENT '修改时间',
+  `is_deleted` char(1) NOT NULL DEFAULT 'N' COMMENT '删除标识',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 COMMENT='系统权限表';
+
+
+-- ----------------------------
+--  系统用户-系统菜单权限表
+-- ----------------------------
+DROP TABLE IF EXISTS `sa_menu_privilege`;
+CREATE TABLE `sa_menu_privilege` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '权限主键',
+  `privilege_id` varchar(100) NOT NULL COMMENT '权限主键id',
+  `menu_id` varchar(100) NOT NULL COMMENT '菜单主键id',
+  `remarks` varchar(255) DEFAULT NULL COMMENT '备注',
+  `creator` bigint(20) NOT NULL COMMENT '创建人',
+  `modifier` bigint(20) NOT NULL COMMENT '修改人',
+  `gmt_created` datetime NOT NULL COMMENT '创建时间',
+  `gmt_modified` datetime NOT NULL COMMENT '修改时间',
+  `is_deleted` char(1) NOT NULL DEFAULT 'N' COMMENT '删除标识',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 COMMENT='系统菜单权限表';
+
+
+
+-- ----------------------------
+--  系统用户-系统操作日志表
+-- ----------------------------
+DROP TABLE IF EXISTS `sa_log`;
+CREATE TABLE `sa_log` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '日志主键',
+  `type` int(11) NOT NULL DEFAULT '0' COMMENT '权限更新的类型，1：部门，2：用户，3：权限模块，4：权限，5：角色，6：角色用户关系，7：角色权限关系',
+  `target_id` int(11) NOT NULL COMMENT '基于type后指定的对象id，比如用户、权限、角色等表的主键',
+  `old_value` text COMMENT '旧值',
+  `new_value` text COMMENT '新值',
+  `status` int(11) NOT NULL DEFAULT '0' COMMENT '当前是否复原过，0：没有，1：复原过',
+  `remarks` varchar(255) DEFAULT NULL COMMENT '备注',
+  `creator` bigint(20) NOT NULL COMMENT '创建人',
+  `modifier` bigint(20) NOT NULL COMMENT '修改人',
+  `gmt_created` datetime NOT NULL COMMENT '创建时间',
+  `gmt_modified` datetime NOT NULL COMMENT '修改时间',
+  `is_deleted` char(1) NOT NULL DEFAULT 'N' COMMENT '删除标识',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 COMMENT='系统操作日志表';
+
+
+
+
+
 
 
 
