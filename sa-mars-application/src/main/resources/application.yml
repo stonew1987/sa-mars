@@ -11,6 +11,17 @@ spring:
         username: root
         password: arm_123456
         driver-class: com.mysql.jdbc.Driver
+    mail:
+        host: smtp.sina.com
+        username: stonew1987@sina.com
+        password: Sa19870505
+#        properties:
+#            mail:
+#                smtp:
+#                    auth: true
+#                        starttls:
+#                            enable: true
+#                            required: true
 
 mybatis:
  config-location: classpath:mybatis-config.xml
