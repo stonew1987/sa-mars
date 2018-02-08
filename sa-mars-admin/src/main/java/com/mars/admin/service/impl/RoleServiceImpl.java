@@ -85,4 +85,14 @@ public class RoleServiceImpl implements RoleService{
             return BaseResult.createByError(CodeEnum.CMN_UPDATE_ERR);
         }
     }
+
+    /**
+     * 检查角色名是否存在
+     * @param roleName  角色名称
+     * @param roleCode  角色编码
+     * @return
+     */
+    private boolean checkExist(String roleName, String roleCode){
+        return roleMapper.countRole(roleName, roleCode) > 0;
+    }
 }

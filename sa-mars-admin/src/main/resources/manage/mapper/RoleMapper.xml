@@ -171,7 +171,7 @@
   <select id="listRole" parameterType="Role" resultType="Role">
     select
     <include refid="Base_Column_List"/>
-    from sa_user
+    from sa_role
     <where>
       <if test="id != null">
         id = #{id,jdbcType=BIGINT},
@@ -205,6 +205,20 @@
       </if>
       <if test="isDeleted != null">
         is_deleted = #{isDeleted,jdbcType=CHAR},
+      </if>
+    </where>
+  </select>
+
+
+  <select id="countRole" parameterType="map" resultType="int">
+    SELECT count(1)
+    FROM sa_role
+    <where>
+      <if test="roleName != null">
+        role_name = #{roleName,jdbcType=VARCHAR},
+      </if>
+      <if test="roleCode != null">
+        role_code = #{roleCode,jdbcType=VARCHAR},
       </if>
     </where>
   </select>
