@@ -16,35 +16,36 @@ import javax.annotation.Resource;
  **/
 
 @RestController
+@RequestMapping("/admin/users")
 public class UserController {
 
     @Resource
     private UserService userService;
 
-    @RequestMapping(value = "/users/{id}",method = RequestMethod.GET)
+    @RequestMapping(value = "/{id}",method = RequestMethod.GET)
     public BaseResult<UserDTO> getUser(@PathVariable Long id){
         return userService.getUserById(id);
     }
 
-    @RequestMapping(value = "/users", method = RequestMethod.POST)
+    @RequestMapping(value = "", method = RequestMethod.POST)
     public BaseResult<Integer> insertUser(@RequestBody UserDTO userDTO){
         BaseResult<Integer> baseResult = userService.insertUser(userDTO);
         return baseResult;
     }
 
-    @RequestMapping(value = "/users/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public BaseResult<Integer> deleteUser(@PathVariable Long id){
         BaseResult<Integer> baseResult = userService.deleteUser(id);
         return baseResult;
     }
 
-    @RequestMapping(value = "/users", method = RequestMethod.GET)
+    @RequestMapping(value = "", method = RequestMethod.GET)
     public BaseResult<PageInfo> listUserPage(UserDTO userDTO){
         BaseResult<PageInfo> baseResult = userService.listUserPage(userDTO, new Page());
         return baseResult;
     }
 
-    @RequestMapping(value = "/users", method = RequestMethod.PUT)
+    @RequestMapping(value = "", method = RequestMethod.PUT)
     public BaseResult<Integer> updateUser(@RequestBody UserDTO userDTO){
         BaseResult<Integer> baseResult = userService.updateUser(userDTO);
         return baseResult;
