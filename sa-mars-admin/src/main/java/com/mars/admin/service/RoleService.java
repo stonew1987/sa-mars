@@ -1,8 +1,9 @@
 package com.mars.admin.service;
 
-
-import com.mars.admin.dto.RoleDTO;
+import com.github.pagehelper.PageInfo;
+import com.mars.share.dto.admin.RoleDTO;
 import com.mars.share.message.BaseResult;
+
 
 public interface RoleService{
 
@@ -26,4 +27,12 @@ public interface RoleService{
      * @return
      */
     BaseResult<Integer> update(RoleDTO roleDTO);
+
+
+    /**
+     * 根据主键更新角色信息
+     * @param roleDTO
+     * @return
+     */
+    BaseResult<PageInfo> listRolePage(RoleDTO roleDTO);
 }

@@ -2,10 +2,9 @@ package com.mars.admin.controller;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageInfo;
-import com.mars.admin.dto.DeptDTO;
-import com.mars.admin.dto.UserDTO;
 import com.mars.admin.service.DeptService;
 import com.mars.admin.service.UserService;
+import com.mars.share.dto.admin.DeptDTO;
 import com.mars.share.message.BaseResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

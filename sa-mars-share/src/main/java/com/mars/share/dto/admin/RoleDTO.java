@@ -1,6 +1,7 @@
-package com.mars.admin.dto;
+package com.mars.share.dto.admin;
 
 
+import com.mars.share.dto.BaseDTO;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -10,7 +11,7 @@ import org.hibernate.validator.constraints.NotBlank;
 @Getter
 @Setter
 @ToString
-public class RoleDTO {
+public class RoleDTO extends BaseDTO{
 
 
     @NotBlank(message = "角色名称不可以为空")
@@ -22,8 +23,5 @@ public class RoleDTO {
 
     @NotBlank(message = "角色类型不能为空")
     private String roleType;
-
-    @Length(max = 255, message = "备注的长度需要在255个字以内")
-    private String remarks;
 
 }

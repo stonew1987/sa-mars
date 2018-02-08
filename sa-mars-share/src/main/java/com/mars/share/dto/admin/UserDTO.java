@@ -1,11 +1,12 @@
-package com.mars.admin.dto;
+package com.mars.share.dto.admin;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.validation.constraints.NotNull;
-import java.util.Date;
 
 
 @Setter

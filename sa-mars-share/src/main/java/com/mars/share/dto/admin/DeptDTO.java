@@ -1,4 +1,4 @@
-package com.mars.admin.dto;
+package com.mars.share.dto.admin;
 
 
 import org.hibernate.validator.constraints.Length;

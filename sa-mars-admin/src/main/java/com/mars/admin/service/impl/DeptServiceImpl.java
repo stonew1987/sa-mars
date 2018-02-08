@@ -1,10 +1,9 @@
 package com.mars.admin.service.impl;
 
-import com.mars.admin.dto.DeptDTO;
 import com.mars.admin.mapper.DeptMapper;
 import com.mars.admin.model.Dept;
-import com.mars.admin.model.User;
 import com.mars.admin.service.DeptService;
+import com.mars.share.dto.admin.DeptDTO;
 import com.mars.share.enums.CodeEnum;
 import com.mars.share.message.BaseResult;
 import com.mars.share.utils.BeanValidator;

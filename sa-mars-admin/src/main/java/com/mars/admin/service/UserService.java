@@ -3,7 +3,7 @@ package com.mars.admin.service;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageInfo;
-import com.mars.admin.dto.UserDTO;
+import com.mars.share.dto.admin.UserDTO;
 import com.mars.share.message.BaseResult;
 
 /**
