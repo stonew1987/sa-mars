@@ -15,6 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -62,13 +63,20 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public BaseResult<PageInfo> listUserPage(UserDTO userDTO, Page page) {
+    public BaseResult<PageInfo> listUserPage(UserDTO userDTO) {
         User user = new User();
         try {
             BeanUtils.copyProperties(user,userDTO);
+            PageHelper.startPage(userDTO.getPageNum(), userDTO.getPageSize());
+
             List<User> list = userMapper.selectUserList(user);
-            PageHelper.startPage(page.getPageNum(), page.getPageSize());
-            PageInfo pageInfo = new PageInfo(list);
+            List<UserDTO> userDTOList = new ArrayList<>();
+            list.stream().forEach(u -> {
+                UserDTO dto = new UserDTO();
+                BeanUtils.copyProperties(u,dto);
+                userDTOList.add(dto);
+            });
+            PageInfo pageInfo = new PageInfo(userDTOList);
             return BaseResult.createBySuccess(pageInfo);
         } catch (Exception e){
             log.error("查询用户分页信息userDTO = {}失败，message = {}", userDTO, e.getMessage(), e);

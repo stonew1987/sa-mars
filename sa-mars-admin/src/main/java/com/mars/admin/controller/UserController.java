@@ -41,7 +41,7 @@ public class UserController {
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     public BaseResult<PageInfo> listUserPage(UserDTO userDTO){
-        BaseResult<PageInfo> baseResult = userService.listUserPage(userDTO, new Page());
+        BaseResult<PageInfo> baseResult = userService.listUserPage(userDTO);
         return baseResult;
     }
 

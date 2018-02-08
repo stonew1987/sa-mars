@@ -33,7 +33,7 @@ public interface UserService {
      * @param userDTO
      * @return
      */
-    BaseResult<PageInfo> listUserPage(UserDTO userDTO, Page page);
+    BaseResult<PageInfo> listUserPage(UserDTO userDTO);
 
     /**
      * 根据主键更新用户信息

@@ -1,5 +1,6 @@
 package com.mars.share.dto.admin;
 
+import com.mars.share.dto.BaseDTO;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -12,7 +13,7 @@ import javax.validation.constraints.NotNull;
 @Setter
 @Getter
 @ToString
-public class UserDTO {
+public class UserDTO extends BaseDTO{
 
     private Long id;
 
@@ -35,7 +36,5 @@ public class UserDTO {
     private String userType;
 
     private String loginFlag;
-
-    private String remarks;
 
 }

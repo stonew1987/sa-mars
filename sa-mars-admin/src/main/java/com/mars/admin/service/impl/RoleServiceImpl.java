@@ -79,7 +79,7 @@ public class RoleServiceImpl implements RoleService{
                 BeanUtils.copyProperties(r, dto);
                 roleDTOList.add(dto);
             });
-            return BaseResult.createBySuccess(new PageInfo(list));
+            return BaseResult.createBySuccess(new PageInfo(roleDTOList));
         } catch (Exception e){
             log.error("获取角色列表失败，参数-->roleDTO = {}，message = {}", roleDTO, e.getMessage(), e);
             return BaseResult.createByError(CodeEnum.CMN_UPDATE_ERR);
