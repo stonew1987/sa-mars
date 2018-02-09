@@ -10,12 +10,12 @@
     </typeAliases>
 
     <mappers>
-        <mapper resource="manage/mapper/UserMapper.xml"/>
-        <mapper resource="manage/mapper/CompanyMapper.xml"/>
-        <mapper resource="manage/mapper/RoleMapper.xml"/>
-        <mapper resource="manage/mapper/RoleMenuMapper.xml"/>
-        <mapper resource="manage/mapper/MenuMapper.xml"/>
-        <mapper resource="manage/mapper/UserRoleMapper.xml"/>
+        <mapper resource="admin/mapper/UserMapper.xml"/>
+        <mapper resource="admin/mapper/CompanyMapper.xml"/>
+        <mapper resource="admin/mapper/RoleMapper.xml"/>
+        <mapper resource="admin/mapper/RoleMenuMapper.xml"/>
+        <mapper resource="admin/mapper/MenuMapper.xml"/>
+        <mapper resource="admin/mapper/UserRoleMapper.xml"/>
     </mappers>
 
 </configuration>

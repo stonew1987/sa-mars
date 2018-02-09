@@ -4,10 +4,8 @@ import com.github.pagehelper.PageInfo;
 import com.mars.admin.service.RoleService;
 import com.mars.share.dto.admin.RoleDTO;
 import com.mars.share.message.BaseResult;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import com.mars.share.vo.admin.RoleVO;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -30,7 +28,7 @@ public class RoleController {
      * @return
      */
     @RequestMapping(value = "", method = RequestMethod.POST)
-    public BaseResult<Integer> insertRole(RoleDTO roleDTO){
+    public BaseResult<Integer> insertRole(@RequestBody RoleDTO roleDTO){
         BaseResult<Integer> baseResult = roleService.insert(roleDTO);
         return baseResult;
     }
@@ -53,19 +51,19 @@ public class RoleController {
      * @return
      */
     @RequestMapping(value = "", method = RequestMethod.PUT)
-    public BaseResult<Integer> updateRole(RoleDTO roleDTO){
+    public BaseResult<Integer> updateRole(@RequestBody RoleDTO roleDTO){
         BaseResult<Integer> baseResult = roleService.update(roleDTO);
         return baseResult;
     }
 
     /**
      * 分页查询角色信息
-     * @param roleDTO
+     * @param roleVO
      * @return
      */
     @RequestMapping(value = "", method = RequestMethod.GET)
-    public BaseResult<PageInfo> listRolePage(RoleDTO roleDTO){
-        BaseResult<PageInfo> baseResult = roleService.listRolePage(roleDTO);
+    public BaseResult<PageInfo> listRolePage(RoleVO roleVO){
+        BaseResult<PageInfo> baseResult = roleService.listRolePage(roleVO);
         return baseResult;
     }
 

@@ -3,6 +3,7 @@ package com.mars.admin.service;
 import com.github.pagehelper.PageInfo;
 import com.mars.share.dto.admin.RoleDTO;
 import com.mars.share.message.BaseResult;
+import com.mars.share.vo.admin.RoleVO;
 
 
 public interface RoleService{
@@ -34,5 +35,5 @@ public interface RoleService{
      * @param roleDTO
      * @return
      */
-    BaseResult<PageInfo> listRolePage(RoleDTO roleDTO);
+    BaseResult<PageInfo> listRolePage(RoleVO roleVO);
 }

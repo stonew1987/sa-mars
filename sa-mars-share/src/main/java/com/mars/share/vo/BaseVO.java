@@ -1,4 +1,4 @@
-package com.mars.share.dto;
+package com.mars.share.vo;
 
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;
@@ -13,7 +13,7 @@ import java.util.Date;
  **/
 
 @Data
-public class BaseDTO {
+public class BaseVO {
 
     //页面显示行数
     private int pageSize = 10;

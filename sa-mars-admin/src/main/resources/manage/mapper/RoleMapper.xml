@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.mars.manage.mapper.RoleMapper">
-  <resultMap id="BaseResultMap" type="com.mars.manage.model.Role">
+<mapper namespace="com.mars.admin.mapper.RoleMapper">
+  <resultMap id="BaseResultMap" type="com.mars.admin.model.Role">
     <constructor>
       <idArg column="id" javaType="java.lang.Long" jdbcType="BIGINT" />
       <arg column="role_name" javaType="java.lang.String" jdbcType="VARCHAR" />
@@ -30,7 +30,7 @@
     delete from sa_role
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.mars.manage.model.Role">
+  <insert id="insert" parameterType="com.mars.admin.model.Role">
     insert into sa_role (id, role_name,
       role_code, role_type, status, 
       remarks, creator, modifier,
@@ -42,7 +42,7 @@
       #{gmtCreated,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP}, #{isDeleted,jdbcType=CHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.mars.manage.model.Role">
+  <insert id="insertSelective" parameterType="Role">
     insert into sa_role
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -115,7 +115,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.mars.manage.model.Role">
+  <update id="updateByPrimaryKeySelective" parameterType="Role">
     update sa_role
     <set>
       <if test="roleName != null">
@@ -152,7 +152,7 @@
     where id = #{id,jdbcType=BIGINT}
   </update>
   
-  <update id="updateByPrimaryKey" parameterType="com.mars.manage.model.Role">
+  <update id="updateByPrimaryKey" parameterType="Role">
     update sa_role
     set role_name = #{roleName,jdbcType=VARCHAR},
       role_code = #{roleCode,jdbcType=VARCHAR},
@@ -168,7 +168,7 @@
   </update>
 
 
-  <select id="listRole" parameterType="Role" resultType="Role">
+  <select id="listRole" parameterType="com.mars.admin.model.Role" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List"/>
     from sa_role
