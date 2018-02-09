@@ -32,7 +32,7 @@ public interface RoleService{
 
     /**
      * 根据主键更新角色信息
-     * @param roleDTO
+     * @param roleVO
      * @return
      */
     BaseResult<PageInfo> listRolePage(RoleVO roleVO);

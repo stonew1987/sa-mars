@@ -15,6 +15,9 @@ spring:
         host: smtp.sina.com
         username: stonew1987@sina.com
         password: Sa19870505
+    jackson:
+        date-format: yyyy-MM-dd HH:mm:ss
+        time-zone: GMT+8
 
 mybatis:
  config-location: classpath:mybatis-config.xml

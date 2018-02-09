@@ -64,7 +64,7 @@ public class RoleServiceImpl implements RoleService{
         Role role = new Role();
         try {
             BeanValidator.check(roleDTO);
-            BeanUtils.copyProperties(role,roleDTO);
+            BeanUtils.copyProperties(roleDTO,role);
             roleMapper.updateByPrimaryKeySelective(role);
             return BaseResult.createBySuccess();
         } catch (Exception e){

@@ -13,6 +13,7 @@ import org.hibernate.validator.constraints.NotBlank;
 @ToString
 public class RoleDTO extends BaseDTO{
 
+    private Long id;
 
     @NotBlank(message = "角色名称不可以为空")
     @Length(min = 2, max = 30, message = "角色名称长度需要在2-20个字之间")
