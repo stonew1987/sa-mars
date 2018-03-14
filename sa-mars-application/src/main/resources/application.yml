@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8083
   sessionTimeout: 30
   contextPath: /mars
   jetty:
@@ -21,7 +21,3 @@ spring:
 
 mybatis:
  config-location: classpath:mybatis-config.xml
-
-#mybatis:
-#  mapper-locations: classpath*:com/mars/**/mapper/*Mapper.xml
-#  type-aliases-package: com.mars.*.model

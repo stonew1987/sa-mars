@@ -1,15 +1,9 @@
 package com.mars.admin.controller;
 
-import com.github.pagehelper.Page;
-import com.github.pagehelper.PageInfo;
 import com.mars.admin.service.DeptService;
-import com.mars.admin.service.UserService;
 import com.mars.share.dto.admin.DeptDTO;
 import com.mars.share.message.BaseResult;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -31,7 +25,7 @@ public class DeptController {
      * @param deptDTO
      * @return
      */
-    @RequestMapping(value = "/depts", method = RequestMethod.POST)
+    @PostMapping(value = "/depts")
     public BaseResult<Integer> insertUser(DeptDTO deptDTO){
         BaseResult<Integer> baseResult = deptService.insert(deptDTO);
         return baseResult;
@@ -42,7 +36,7 @@ public class DeptController {
      * @param id
      * @return
      */
-    @RequestMapping(value = "/depts/{id}", method = RequestMethod.DELETE)
+    @DeleteMapping(value = "/depts/{id}")
     public BaseResult<Integer> deleteUser(@PathVariable Long id){
         BaseResult<Integer> baseResult = deptService.delete(id);
         return baseResult;
@@ -54,7 +48,7 @@ public class DeptController {
      * @param deptDTO
      * @return
      */
-    @RequestMapping(value = "/depts", method = RequestMethod.PUT)
+    @PutMapping(value = "/depts")
     public BaseResult<Integer> updateUser(DeptDTO deptDTO){
         BaseResult<Integer> baseResult = deptService.update(deptDTO);
         return baseResult;

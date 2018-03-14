@@ -1,6 +1,5 @@
 package com.mars.admin.controller;
 
-import com.github.pagehelper.Page;
 import com.github.pagehelper.PageInfo;
 import com.mars.admin.service.UserService;
 import com.mars.share.dto.admin.UserDTO;
